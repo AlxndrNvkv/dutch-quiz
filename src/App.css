@@ -49,6 +49,81 @@ body {
   margin-bottom: 2.5rem;
 }
 
+/* ── Study Set Filter ── */
+.filter-section {
+  margin-bottom: 2rem;
+}
+
+.filter-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #a8a29e;
+  margin-bottom: 0.6rem;
+}
+
+.filter-presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  justify-content: center;
+}
+
+.filter-preset {
+  background: #fff;
+  border: 2px solid #fde5cc;
+  border-radius: 999px;
+  padding: 0.3rem 0.9rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: #78716c;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+
+.filter-preset:hover {
+  border-color: #ff6600;
+  color: #c75000;
+}
+
+.filter-preset.active {
+  background: #ff6600;
+  border-color: #ff6600;
+  color: #fff;
+}
+
+.filter-custom {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.filter-custom label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #78716c;
+}
+
+.filter-custom select {
+  border: 2px solid #fde5cc;
+  border-radius: 8px;
+  padding: 0.3rem 0.5rem;
+  font-size: 0.82rem;
+  background: #fff;
+  color: #1a1a2e;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.filter-custom select:focus {
+  border-color: #ff6600;
+}
+
 .mode-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));

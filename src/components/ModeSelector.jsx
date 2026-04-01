@@ -1,10 +1,65 @@
-export default function ModeSelector({ onSelect }) {
+function formatMonth(m) {
+  const [year, month] = m.split('-')
+  return new Date(year, month - 1).toLocaleDateString('en-GB', { month: 'short', year: 'numeric' })
+}
+
+const PRESETS = [
+  { id: 'all',     label: 'All words' },
+  { id: 'latest',  label: 'Latest session' },
+  { id: 'last3',   label: 'Last 3 months' },
+  { id: 'last6',   label: 'Last 6 months' },
+  { id: 'custom',  label: 'Custom range' },
+]
+
+export default function ModeSelector({
+  onSelect,
+  filter, onFilterChange,
+  customFrom, onCustomFromChange,
+  customTo,   onCustomToChange,
+  filteredCount, allMonths,
+}) {
   return (
     <div className="mode-selector">
       <div className="logo">🇳🇱</div>
       <h1>Dutch Speaking Club</h1>
-      <p className="subtitle">150+ words from the EPAM Dutch Speaking Club sessions</p>
+      <p className="subtitle">
+        {filteredCount} word{filteredCount !== 1 ? 's' : ''} ready to study
+      </p>
       <p className="direction-badge">English → Dutch</p>
+
+      <div className="filter-section">
+        <div className="filter-label">Study set</div>
+        <div className="filter-presets">
+          {PRESETS.map(p => (
+            <button
+              key={p.id}
+              className={`filter-preset${filter === p.id ? ' active' : ''}`}
+              onClick={() => onFilterChange(p.id)}
+            >
+              {p.label}
+            </button>
+          ))}
+        </div>
+
+        {filter === 'custom' && (
+          <div className="filter-custom">
+            <label>From</label>
+            <select value={customFrom} onChange={e => onCustomFromChange(e.target.value)}>
+              <option value="">earliest</option>
+              {allMonths.map(m => (
+                <option key={m} value={m}>{formatMonth(m)}</option>
+              ))}
+            </select>
+            <label>to</label>
+            <select value={customTo} onChange={e => onCustomToChange(e.target.value)}>
+              <option value="">latest</option>
+              {allMonths.map(m => (
+                <option key={m} value={m}>{formatMonth(m)}</option>
+              ))}
+            </select>
+          </div>
+        )}
+      </div>
 
       <div className="mode-cards">
         <button className="mode-card" onClick={() => onSelect('flashcard')}>
