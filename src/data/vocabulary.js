@@ -179,6 +179,11 @@ export const vocabulary = [
 
   // April 2026
   { english: "impressive", dutch: "indrukwekkend", month: "2026-04" },
+  { english: "scarf", dutch: "sjaal", month: "2026-04" },
+  { english: "appearance", dutch: "uiterlijk", month: "2026-04" },
+  { english: "vocabulary", dutch: "woordenschat", month: "2026-04" },
+  { english: "exception", dutch: "uitzondering", month: "2026-04" },
+  { english: "wrestling", dutch: "worstelen", month: "2026-04" },
   { english: "on the train", dutch: "in de trein", month: "2026-04" },
   { english: "to understand", dutch: "begrijpen", month: "2026-04" },
   { english: "topic", dutch: "onderwerp", month: "2026-04" },
@@ -186,6 +191,17 @@ export const vocabulary = [
   { english: "noise cancellation", dutch: "ruisonderdrukking", month: "2026-04" },
   { english: "strained", dutch: "verdraaid", month: "2026-04" },
   { english: "injury", dutch: "blessure", month: "2026-04" },
+
+  // May 2026
+  { english: "to value / appreciate", dutch: "waarderen", month: "2026-05" },
+  { english: "receptionist (f.)", dutch: "receptioniste", month: "2026-05" },
+  { english: "receptionist (m.)", dutch: "receptionist", month: "2026-05" },
+  { english: "confident", dutch: "zelfverzekerd", month: "2026-05" },
+  { english: "stubborn", dutch: "koppig", month: "2026-05" },
+  { english: "bank holiday", dutch: "feestdag", month: "2026-05" },
+  { english: "non-religious", dutch: "seculier", month: "2026-05" },
+  { english: "happy to see you again", dutch: "blij om jullie weer te zien", month: "2026-05" },
+  { english: "unusual", dutch: "ongebruikelijk", month: "2026-05" },
 ];
 
 export function shuffle(arr) {
