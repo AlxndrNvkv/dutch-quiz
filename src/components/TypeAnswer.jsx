@@ -62,6 +62,7 @@ export default function TypeAnswer({ word, index, total, onNext, onPrev, onHome 
       <div className="question-card">
         <span className="card-lang">English</span>
         <span className="question-word">{word.english}</span>
+        <span className="card-hint">Enter to check · ← → to navigate after answering</span>
       </div>
 
       <div className="type-area">

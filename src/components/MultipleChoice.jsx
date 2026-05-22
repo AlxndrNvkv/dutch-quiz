@@ -55,6 +55,7 @@ export default function MultipleChoice({ word, allWords, index, total, onNext, o
       <div className="question-card">
         <span className="card-lang">English</span>
         <span className="question-word">{word.english}</span>
+        <span className="card-hint">1–4 to pick · ← → to navigate</span>
       </div>
 
       <div className="options-grid">
