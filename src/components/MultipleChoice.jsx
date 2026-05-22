@@ -11,6 +11,17 @@ export default function MultipleChoice({ word, allWords, index, total, onNext, o
     setSelected(null)
   }, [word])
 
+  useEffect(() => {
+    function onKey(e) {
+      if (e.key === 'ArrowLeft'  && index > 0)                    handlePrev()
+      if (e.key === 'ArrowRight' && selected && index < total - 1) handleNext()
+      const n = parseInt(e.key)
+      if (n >= 1 && n <= options.length) pick(options[n - 1])
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [index, total, selected, options])
+
   function pick(option) {
     if (selected) return
     setSelected(option)

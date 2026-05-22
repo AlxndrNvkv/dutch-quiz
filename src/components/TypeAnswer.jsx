@@ -24,6 +24,16 @@ export default function TypeAnswer({ word, index, total, onNext, onPrev, onHome 
     inputRef.current?.focus()
   }, [word])
 
+  useEffect(() => {
+    function onKey(e) {
+      if (!result) return
+      if (e.key === 'ArrowLeft'  && index > 0)         handlePrev()
+      if (e.key === 'ArrowRight' && index < total - 1) handleNext()
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [result, index, total])
+
   function check() {
     if (!input.trim()) return
     setResult(isCorrect(input, word) ? 'correct' : 'wrong')
