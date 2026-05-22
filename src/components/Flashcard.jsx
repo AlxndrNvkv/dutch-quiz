@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function Flashcard({ word, index, total, onNext, onPrev, onHome }) {
   const [flipped, setFlipped] = useState(false)
@@ -13,6 +13,16 @@ export default function Flashcard({ word, index, total, onNext, onPrev, onHome }
     setTimeout(onPrev, 150)
   }
 
+  useEffect(() => {
+    function onKey(e) {
+      if (e.key === 'ArrowRight' && index < total - 1) handleNext()
+      if (e.key === 'ArrowLeft'  && index > 0)         handlePrev()
+      if (e.key === ' ')                                setFlipped(f => !f)
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [index, total])
+
   return (
     <div className="quiz-screen">
       <div className="quiz-header">
@@ -26,7 +36,7 @@ export default function Flashcard({ word, index, total, onNext, onPrev, onHome }
           <div className="card-front">
             <span className="card-lang">English</span>
             <span className="card-word">{word.english}</span>
-            <span className="card-hint">Click to flip</span>
+            <span className="card-hint">Click or Space to flip · ← → to navigate</span>
           </div>
           <div className="card-back">
             <span className="card-lang">Nederlands</span>
