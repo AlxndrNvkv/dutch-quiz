@@ -37,6 +37,30 @@ body {
   margin-bottom: 0.75rem;
 }
 
+.direction-toggle {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.dir-btn {
+  padding: 0.25rem 0.85rem;
+  border-radius: 999px;
+  border: 2px solid #ff6600;
+  background: transparent;
+  color: #ff6600;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.dir-btn.active {
+  background: #ff6600;
+  color: #fff;
+}
+
 .vocab-updated {
   color: #a8a29e;
   font-size: 0.78rem;

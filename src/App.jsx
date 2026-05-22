@@ -31,6 +31,7 @@ function applyFilter(vocab, filter, customFrom, customTo) {
 
 export default function App() {
   const [mode, setMode]           = useState(null)
+  const [direction, setDirection] = useState('en-nl')
   const [words, setWords]         = useState([])
   const [index, setIndex]         = useState(0)
   const [filter, setFilter]       = useState('all')
@@ -66,6 +67,8 @@ export default function App() {
       onCustomToChange={setCustomTo}
       filteredCount={filteredVocabulary.length}
       allMonths={ALL_MONTHS}
+      direction={direction}
+      onDirectionChange={setDirection}
     />
   )
 
@@ -73,6 +76,7 @@ export default function App() {
     word,
     index,
     total: words.length,
+    direction,
     onNext: () => setIndex(i => Math.min(i + 1, words.length - 1)),
     onPrev: () => setIndex(i => Math.max(i - 1, 0)),
     onHome: goHome,

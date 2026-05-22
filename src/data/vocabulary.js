@@ -256,8 +256,8 @@ export function shuffle(arr) {
   return a;
 }
 
-export function getWrongOptions(correct, all, count = 3) {
-  const pool = all.filter(w => w.dutch !== correct.dutch);
+export function getWrongOptions(correct, all, field = 'dutch', count = 3) {
+  const pool = all.filter(w => w[field] !== correct[field]);
   const shuffled = shuffle(pool);
-  return shuffled.slice(0, count).map(w => w.dutch);
+  return shuffled.slice(0, count).map(w => w[field]);
 }

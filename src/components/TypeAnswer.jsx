@@ -13,7 +13,7 @@ function isCorrect(input, word) {
   return accepted.some(a => a === userAnswer)
 }
 
-export default function TypeAnswer({ word, index, total, onNext, onPrev, onHome }) {
+export default function TypeAnswer({ word, index, total, direction, onNext, onPrev, onHome }) {
   const [input, setInput]   = useState('')
   const [result, setResult] = useState(null) // null | 'correct' | 'wrong'
   const inputRef = useRef()
@@ -36,7 +36,9 @@ export default function TypeAnswer({ word, index, total, onNext, onPrev, onHome 
 
   function check() {
     if (!input.trim()) return
-    setResult(isCorrect(input, word) ? 'correct' : 'wrong')
+    const answerField = direction === 'en-nl' ? 'dutch' : 'english'
+    const accepted = word[answerField].split(',').map(s => normalize(s.trim()))
+    setResult(accepted.some(a => a === normalize(input)) ? 'correct' : 'wrong')
   }
 
   function handleNext() {
@@ -60,8 +62,8 @@ export default function TypeAnswer({ word, index, total, onNext, onPrev, onHome 
       </div>
 
       <div className="question-card">
-        <span className="card-lang">English</span>
-        <span className="question-word">{word.english}</span>
+        <span className="card-lang">{direction === 'en-nl' ? 'English' : 'Nederlands'}</span>
+        <span className="question-word">{direction === 'en-nl' ? word.english : word.dutch}</span>
         <span className="card-hint">Enter to check · ← → to navigate after answering</span>
       </div>
 
@@ -70,7 +72,7 @@ export default function TypeAnswer({ word, index, total, onNext, onPrev, onHome 
           ref={inputRef}
           className={`type-input ${result === 'correct' ? 'input-correct' : result === 'wrong' ? 'input-wrong' : ''}`}
           type="text"
-          placeholder="Type the Dutch word..."
+          placeholder={direction === 'en-nl' ? 'Type the Dutch word...' : 'Type the English word...'}
           value={input}
           onChange={e => setInput(e.target.value)}
           onKeyDown={e => { if (e.key === 'Enter') result ? handleNext() : check() }}
@@ -83,7 +85,7 @@ export default function TypeAnswer({ word, index, total, onNext, onPrev, onHome 
 
       {result && (
         <div className={`feedback ${result === 'correct' ? 'feedback-correct' : 'feedback-wrong'}`}>
-          {result === 'correct' ? '✓ Correct!' : `✗ The answer is: ${word.dutch}`}
+          {result === 'correct' ? '✓ Correct!' : `✗ The answer is: ${direction === 'en-nl' ? word.dutch : word.english}`}
         </div>
       )}
 

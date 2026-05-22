@@ -17,6 +17,7 @@ export default function ModeSelector({
   customFrom, onCustomFromChange,
   customTo,   onCustomToChange,
   filteredCount, allMonths,
+  direction, onDirectionChange,
 }) {
   return (
     <div className="mode-selector">
@@ -30,7 +31,16 @@ export default function ModeSelector({
           Updated: {formatMonth(allMonths[allMonths.length - 1])}
         </p>
       )}
-      <p className="direction-badge">English → Dutch</p>
+      <div className="direction-toggle">
+        <button
+          className={`dir-btn${direction === 'en-nl' ? ' active' : ''}`}
+          onClick={() => onDirectionChange('en-nl')}
+        >English → Dutch</button>
+        <button
+          className={`dir-btn${direction === 'nl-en' ? ' active' : ''}`}
+          onClick={() => onDirectionChange('nl-en')}
+        >Dutch → English</button>
+      </div>
 
       <div className="filter-section">
         <div className="filter-label">Study set</div>

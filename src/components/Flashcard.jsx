@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-export default function Flashcard({ word, index, total, onNext, onPrev, onHome }) {
+export default function Flashcard({ word, index, total, direction, onNext, onPrev, onHome }) {
   const [flipped, setFlipped] = useState(false)
 
   function handleNext() {
@@ -34,13 +34,13 @@ export default function Flashcard({ word, index, total, onNext, onPrev, onHome }
       <div className={`flashcard ${flipped ? 'flipped' : ''}`} onClick={() => setFlipped(f => !f)}>
         <div className="card-inner">
           <div className="card-front">
-            <span className="card-lang">English</span>
-            <span className="card-word">{word.english}</span>
+            <span className="card-lang">{direction === 'en-nl' ? 'English' : 'Nederlands'}</span>
+            <span className="card-word">{direction === 'en-nl' ? word.english : word.dutch}</span>
             <span className="card-hint">Click or Space to flip · ← → to navigate</span>
           </div>
           <div className="card-back">
-            <span className="card-lang">Nederlands</span>
-            <span className="card-word">{word.dutch}</span>
+            <span className="card-lang">{direction === 'en-nl' ? 'Nederlands' : 'English'}</span>
+            <span className="card-word">{direction === 'en-nl' ? word.dutch : word.english}</span>
           </div>
         </div>
       </div>

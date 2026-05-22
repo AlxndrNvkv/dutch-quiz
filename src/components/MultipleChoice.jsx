@@ -1,15 +1,17 @@
 import { useState, useEffect } from 'react'
 import { getWrongOptions, shuffle } from '../data/vocabulary'
 
-export default function MultipleChoice({ word, allWords, index, total, onNext, onPrev, onHome }) {
+export default function MultipleChoice({ word, allWords, index, total, direction, onNext, onPrev, onHome }) {
   const [options, setOptions]   = useState([])
   const [selected, setSelected] = useState(null)
 
+  const answerField = direction === 'en-nl' ? 'dutch' : 'english'
+
   useEffect(() => {
-    const wrongs = getWrongOptions(word, allWords)
-    setOptions(shuffle([word.dutch, ...wrongs]))
+    const wrongs = getWrongOptions(word, allWords, answerField)
+    setOptions(shuffle([word[answerField], ...wrongs]))
     setSelected(null)
-  }, [word])
+  }, [word, direction])
 
   useEffect(() => {
     function onKey(e) {
@@ -39,7 +41,7 @@ export default function MultipleChoice({ word, allWords, index, total, onNext, o
 
   function optionClass(opt) {
     if (!selected) return 'option'
-    if (opt === word.dutch) return 'option correct'
+    if (opt === word[answerField]) return 'option correct'
     if (opt === selected) return 'option wrong'
     return 'option dimmed'
   }
@@ -53,8 +55,8 @@ export default function MultipleChoice({ word, allWords, index, total, onNext, o
       </div>
 
       <div className="question-card">
-        <span className="card-lang">English</span>
-        <span className="question-word">{word.english}</span>
+        <span className="card-lang">{direction === 'en-nl' ? 'English' : 'Nederlands'}</span>
+        <span className="question-word">{direction === 'en-nl' ? word.english : word.dutch}</span>
         <span className="card-hint">1–4 to pick · ← → to navigate</span>
       </div>
 
@@ -62,15 +64,15 @@ export default function MultipleChoice({ word, allWords, index, total, onNext, o
         {options.map((opt) => (
           <button key={opt} className={optionClass(opt)} onClick={() => pick(opt)}>
             {opt}
-            {selected && opt === word.dutch && <span className="tick"> ✓</span>}
-            {selected && opt === selected && opt !== word.dutch && <span className="cross"> ✗</span>}
+            {selected && opt === word[answerField] && <span className="tick"> ✓</span>}
+            {selected && opt === selected && opt !== word[answerField] && <span className="cross"> ✗</span>}
           </button>
         ))}
       </div>
 
       {selected && (
-        <div className={`feedback ${selected === word.dutch ? 'feedback-correct' : 'feedback-wrong'}`}>
-          {selected === word.dutch ? '✓ Correct!' : `✗ The answer is: ${word.dutch}`}
+        <div className={`feedback ${selected === word[answerField] ? 'feedback-correct' : 'feedback-wrong'}`}>
+          {selected === word[answerField] ? '✓ Correct!' : `✗ The answer is: ${word[answerField]}`}
         </div>
       )}
 
