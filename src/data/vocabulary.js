@@ -1,4 +1,4 @@
-// Extracted from Dutch Speaking Club A2+/B1/B1+ Teams chat (May 2025 – April 2026)
+// Extracted from Dutch Speaking Club A2+/B1/B1+ Teams chat (May 2025 – May 2026)
 export const vocabulary = [
   // May 2025
   { english: "zoo", dutch: "dierentuin", month: "2025-05" },
@@ -30,6 +30,15 @@ export const vocabulary = [
   { english: "he was astonished", dutch: "hij was verbaasd", month: "2025-06" },
   { english: "I remember", dutch: "ik herinner me", month: "2025-06" },
   { english: "accident", dutch: "ongeval", month: "2025-06" },
+  { english: "rear-wheel drive", dutch: "achterwielaandrijving", month: "2025-06" },
+  { english: "to teach", dutch: "lesgeven", month: "2025-06" },
+  { english: "sail (noun)", dutch: "zeil", month: "2025-06" },
+  { english: "to hit (strike/meet)", dutch: "treffen", month: "2025-06" },
+  { english: "to hit (physically)", dutch: "slaan", month: "2025-06" },
+  { english: "to join a club", dutch: "bij een club inschrijven", month: "2025-06" },
+  { english: "collision / crash", dutch: "botsing", month: "2025-06" },
+  { english: "dumbest", dutch: "domste", month: "2025-06" },
+  { english: "smartest", dutch: "slimste", month: "2025-06" },
 
   // July 2025
   { english: "majority", dutch: "meerderheid", month: "2025-07" },
@@ -55,6 +64,9 @@ export const vocabulary = [
   { english: "suit", dutch: "pak", month: "2025-07" },
   { english: "tie", dutch: "stropdas", month: "2025-07" },
   { english: "chemistry", dutch: "scheikunde", month: "2025-07" },
+  { english: "concepts / terms", dutch: "begrippen", month: "2025-07" },
+  { english: "public workshop", dutch: "openbare werkplaats", month: "2025-07" },
+  { english: "taller", dutch: "langer", month: "2025-07" },
 
   // August 2025
   { english: "word order", dutch: "woordvolgorde", month: "2025-08" },
@@ -64,6 +76,9 @@ export const vocabulary = [
   { english: "southern", dutch: "zuidelijk", month: "2025-08" },
   { english: "fired", dutch: "ontslagen", month: "2025-08" },
   { english: "scale", dutch: "weegschaal", month: "2025-08" },
+  { english: "more southern", dutch: "zuidelijker", month: "2025-08" },
+  { english: "her (possessive)", dutch: "haar", month: "2025-08" },
+  { english: "his (possessive)", dutch: "zijn", month: "2025-08" },
 
   // September 2025
   { english: "something very easy", dutch: "een fluitje van een cent", month: "2025-09" },
@@ -74,6 +89,9 @@ export const vocabulary = [
   { english: "to meet", dutch: "ontmoeten", month: "2025-09" },
   { english: "modest", dutch: "bescheiden", month: "2025-09" },
   { english: "humble", dutch: "onderdanig", month: "2025-09" },
+  { english: "a piece of cake", dutch: "een eitje", month: "2025-09" },
+  { english: "theatre / acting", dutch: "toneel", month: "2025-09" },
+  { english: "stage / platform", dutch: "podium", month: "2025-09" },
 
   // October 2025
   { english: "to compare", dutch: "vergelijken", month: "2025-10" },
@@ -99,6 +117,8 @@ export const vocabulary = [
   { english: "by default", dutch: "standaard", month: "2025-10" },
   { english: "slang", dutch: "straattaal", month: "2025-10" },
   { english: "funny", dutch: "geestig", month: "2025-10" },
+  { english: "the sign", dutch: "het teken", month: "2025-10" },
+  { english: "the effort / the trouble", dutch: "de moeite", month: "2025-10" },
 
   // November 2025
   { english: "I can't complain", dutch: "ik mag niet klagen", month: "2025-11" },
@@ -122,6 +142,14 @@ export const vocabulary = [
   { english: "to throw", dutch: "gooien", month: "2025-11" },
   { english: "dolphin", dutch: "dolfijn", month: "2025-11" },
   { english: "complaint", dutch: "klacht", month: "2025-11" },
+  { english: "to join in / take part", dutch: "meedoen", month: "2025-11" },
+  { english: "to be part of something", dutch: "onderdeel zijn van iets", month: "2025-11" },
+  { english: "normal circumstances", dutch: "normale omstandigheden", month: "2025-11" },
+  { english: "New Year's dive (Jan 1 tradition)", dutch: "nieuwjaarsduik", month: "2025-11" },
+  { english: "carbide shooting (New Year's tradition)", dutch: "carbidschieten", month: "2025-11" },
+  { english: "tailwind (idiomatic)", dutch: "de wind in de rug", month: "2025-11" },
+  { english: "he threw up", dutch: "hij heeft overgegeven", month: "2025-11" },
+  { english: "pavilion", dutch: "paviljoen", month: "2025-11" },
 
   // December 2025
   { english: "flight", dutch: "vlucht", month: "2025-12" },
@@ -133,6 +161,7 @@ export const vocabulary = [
   { english: "to prepare", dutch: "voorbereiden", month: "2025-12" },
   { english: "to recommend", dutch: "aanraden", month: "2025-12" },
   { english: "to let down", dutch: "in de steek laten", month: "2025-12" },
+  { english: "the one who always bails", dutch: "Sjaak Afhaak", month: "2025-12" },
 
   // January 2026
   { english: "neighbourhood", dutch: "buurt", month: "2026-01" },
@@ -156,6 +185,7 @@ export const vocabulary = [
   { english: "to show", dutch: "laten zien", month: "2026-01" },
   { english: "millstone", dutch: "molensteen", month: "2026-01" },
   { english: "we walked", dutch: "we liepen", month: "2026-01" },
+  { english: "board games", dutch: "bordspellen", month: "2026-01" },
 
   // February 2026
   { english: "abbreviation", dutch: "afkorting", month: "2026-02" },
@@ -166,6 +196,9 @@ export const vocabulary = [
   { english: "progress", dutch: "vooruitgang", month: "2026-02" },
   { english: "lie", dutch: "leugen", month: "2026-02" },
   { english: "useful", dutch: "nuttig", month: "2026-02" },
+  { english: "strong / irregular verbs", dutch: "sterke werkwoorden", month: "2026-02" },
+  { english: "to help (hielp / geholpen)", dutch: "helpen", month: "2026-02" },
+  { english: "to walk (liep / gelopen)", dutch: "lopen", month: "2026-02" },
 
   // March 2026
   { english: "around me", dutch: "om me heen", month: "2026-03" },
@@ -176,6 +209,7 @@ export const vocabulary = [
   { english: "floor (of a building)", dutch: "etage", month: "2026-03" },
   { english: "old fashioned", dutch: "ouderwets", month: "2026-03" },
   { english: "great grandfather", dutch: "overgrootvader", month: "2026-03" },
+  { english: "scandalous / outrageous", dutch: "schandalig", month: "2026-03" },
 
   // April 2026
   { english: "impressive", dutch: "indrukwekkend", month: "2026-04" },
@@ -202,6 +236,15 @@ export const vocabulary = [
   { english: "non-religious", dutch: "seculier", month: "2026-05" },
   { english: "happy to see you again", dutch: "blij om jullie weer te zien", month: "2026-05" },
   { english: "unusual", dutch: "ongebruikelijk", month: "2026-05" },
+  { english: "to delete", dutch: "verwijderen", month: "2026-05" },
+  { english: "division / department", dutch: "afdeling", month: "2026-05" },
+  { english: "dishwasher", dutch: "vaatwasser", month: "2026-05" },
+  { english: "partner leave", dutch: "partnerverlof", month: "2026-05" },
+  { english: "paternity leave", dutch: "vaderschapsverlof", month: "2026-05" },
+  { english: "we had visitors", dutch: "we hadden bezoek", month: "2026-05" },
+  { english: "soul", dutch: "ziel", month: "2026-05" },
+  { english: "I had to", dutch: "ik moest", month: "2026-05" },
+  { english: "installers / technicians", dutch: "installateurs", month: "2026-05" },
 ];
 
 export function shuffle(arr) {

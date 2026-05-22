@@ -25,6 +25,11 @@ export default function ModeSelector({
       <p className="subtitle">
         {filteredCount} word{filteredCount !== 1 ? 's' : ''} ready to study
       </p>
+      {allMonths.length > 0 && (
+        <p className="vocab-updated">
+          Updated: {formatMonth(allMonths[allMonths.length - 1])}
+        </p>
+      )}
       <p className="direction-badge">English → Dutch</p>
 
       <div className="filter-section">

@@ -37,6 +37,12 @@ body {
   margin-bottom: 0.75rem;
 }
 
+.vocab-updated {
+  color: #a8a29e;
+  font-size: 0.78rem;
+  margin-bottom: 0.5rem;
+}
+
 .direction-badge {
   display: inline-block;
   background: #ff6600;
